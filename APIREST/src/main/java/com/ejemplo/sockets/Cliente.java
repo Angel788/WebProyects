@@ -21,8 +21,8 @@ public class Cliente {
                 System.out.println("1 Catalogo");
                 System.out.println("2 Agreagar Carrito Articulo");
                 System.out.println("3 Eliminar Carrito Articulo");
-                System.out.println("4 Generar tiket");
-                System.out.println("5 Generar tiket");
+                System.out.println("4 Generar compra(ticket)");
+                System.out.println("5 Ver imagen");
                 DataOutputStream dataOutputStream=new DataOutputStream(socket.getOutputStream());
                 System.out.print("Escribe el tipo de operacion: ");
                 int type=scanner.nextInt();

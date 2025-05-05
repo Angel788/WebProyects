@@ -71,6 +71,18 @@ public class ManejadorBd {
         }
         return -1;
     }
+    int compra(){
+        try {
+            String query = "DELETE FROM COMPRAS ";
+            Statement stmt = connection.createStatement();
+            int cols = stmt.executeUpdate(query);
+            if(cols>=1)return 1;
+            return -1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
     int  eliminarLibroCarrito(int id){
         try{
             String query = "DELETE FROM COMPRAS WHERE id_libro="+id;

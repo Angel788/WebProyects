@@ -5,6 +5,8 @@ import java.io.DataInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Vector;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -99,13 +101,21 @@ public class Servidor {
         try {
             System.out.println("Generando ticket");
             Vector<Libro>libros=manejadorBd.getLibrosCompra();
+            if(manejadorBd.compra()==1)System.out.print("Se realizo la compra");
+            else System.out.println("No se realizo la compra");
             PDDocument pdDocument=new PDDocument();
             PDPage pdPage=new PDPage();
             pdDocument.addPage(pdPage);
             PDPageContentStream pdPageContentStream=new PDPageContentStream(pdDocument, pdPage);
+            LocalDateTime localDateTime=LocalDateTime.now();
+            DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern("dd/MM/yyyy HH");
+            String date=localDateTime.format(dateTimeFormatter);
             pdPageContentStream.beginText();
             pdPageContentStream.setFont(PDType1Font.HELVETICA, 12);
-            pdPageContentStream.newLineAtOffset(25, 700);      
+            pdPageContentStream.newLineAtOffset(25, 700);
+            pdPageContentStream.showText("Fecha: "+date);
+            
+            pdPageContentStream.newLineAtOffset(0, -30);
             pdPageContentStream.showText("Libros comprados:");
             pdPageContentStream.newLineAtOffset(0, -20);                                    
             for(Libro libro:libros){

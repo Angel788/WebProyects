@@ -7,7 +7,6 @@ for arg in "$@"; do
 done
 
 mvn clean install 
-
 if [ "$tipo" = "server" ]; then
   echo "Ejecutando servidor..."
   mvn exec:java@server
@@ -15,6 +14,6 @@ elif [ "$tipo" = "cliente" ]; then
   echo "Ejecutando cliente..."
   mvn exec:java@cliente
 else
-  echo "No se agrego el argumento tipo en la ejecución"
+  echo "Se ejecuto el ssh"
   exit 1
 fi
