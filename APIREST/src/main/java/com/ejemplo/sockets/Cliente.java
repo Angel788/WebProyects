@@ -16,7 +16,7 @@ public class Cliente {
         try {
             for(;;){
                 System.out.println("__________________________");
-                socket=new Socket("127.0.0.1", 1234);
+                socket=new Socket("3.144.12.68", 1234);
                 System.out.println("Escribe el tipo de operacion que deseas realizar");
                 System.out.println("1 Catalogo");
                 System.out.println("2 Agreagar Carrito Articulo");

@@ -27,7 +27,7 @@ public class Servidor {
     static S3Client s3Client;
     public  static void main(String args[]){
         try{
-            Region region=Region.EU_WEST_2;
+            Region region=Region.US_EAST_2;
             s3Client=S3Client.builder()
                      .region(region)
                      .credentialsProvider( ProfileCredentialsProvider.create())
