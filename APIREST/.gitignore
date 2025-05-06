@@ -2,3 +2,4 @@ imagenes/
 tiket.pdf
 test/
 target/
+*.class
