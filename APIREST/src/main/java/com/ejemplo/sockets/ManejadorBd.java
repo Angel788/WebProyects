@@ -16,7 +16,7 @@ public class ManejadorBd {
     Vector<Libro> ConsultarTodos(){
         Vector<Libro> libros=new Vector<>();
         try{
-            String query = "SELECT * FROM libros";
+            String query = "SELECT * FROM libros where libros.existencias>=1";
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
