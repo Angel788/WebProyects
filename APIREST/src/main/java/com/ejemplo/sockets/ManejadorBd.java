@@ -73,7 +73,7 @@ public class ManejadorBd {
     }
     int compra(){
         try {
-            String query = "DELETE FROM COMPRAS ";
+            String query = "DELETE FROM compras";
             Statement stmt = connection.createStatement();
             int cols = stmt.executeUpdate(query);
             if(cols>=1)return 1;

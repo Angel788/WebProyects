@@ -43,6 +43,7 @@ public class Servidor {
                 else if(operacion==2) addLibro(socket);
                 else if(operacion==3)eliminarLibroCarrito(socket);
                 else if(operacion==4)generarTicket(socket);
+                else if(operacion==6) manejadorBd.compra();
                 else enviarImgane(socket);
             }
         }catch(Exception e){

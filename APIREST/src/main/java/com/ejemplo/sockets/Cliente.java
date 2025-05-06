@@ -30,6 +30,7 @@ public class Cliente {
                 if(type==1) getCatalogo();
                 else if(type==2 ||  type==3) updateTicket(dataOutputStream, scanner);
                 else if(type==4) getTicket();
+                else if(type==6) System.out.println("Se completo la compra");
                 else getImagenCatalogo(dataOutputStream, scanner);
                 System.out.println("__________________________");
                 dataOutputStream.flush();
